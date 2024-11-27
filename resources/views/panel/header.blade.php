@@ -35,16 +35,12 @@
                                 <span>My Profile</span>
                             </a>
                         </li>
-                    @else
-                        <li class="dropdown-header">
-                            <a href="{{ route('logout') }}"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Logout
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="{{ url('logout') }}">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
                             </a>
                         </li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
                     @endif
                 </ul>
             </li>
