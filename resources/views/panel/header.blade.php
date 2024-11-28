@@ -36,9 +36,14 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="{{ url('logout') }}">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                    @else
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center text-danger" href="{{ url('logout') }}">
+                                <i class="bi bi-box-arrow-right text-danger"></i>
+                                <span>Logout</span>
                             </a>
                         </li>
                     @endif
