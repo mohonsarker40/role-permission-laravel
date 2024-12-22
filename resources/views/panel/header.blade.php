@@ -38,8 +38,6 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-
-                    @else
                         <li>
                             <a class="dropdown-item d-flex align-items-center text-danger" href="{{ url('logout') }}">
                                 <i class="bi bi-box-arrow-right text-danger"></i>

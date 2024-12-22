@@ -31,7 +31,7 @@ class AuthController extends Controller
     public  function logout()
     {
         Auth::logout();
-        return redirect(url('auth.login'));
+        return redirect(url(''));
     }
 
     public function index()
