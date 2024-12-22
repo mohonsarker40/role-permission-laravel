@@ -12,7 +12,7 @@
             <li class="nav-item">
                 <a class="nav-link " href="#">
                     <i class="bi bi-circle"></i>
-                    <span>user</span>
+                    <span>User</span>
                 </a>
             </li>
             <li class="nav-item">
