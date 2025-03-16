@@ -93,6 +93,7 @@
         </div>
     </section>
 </main><!-- End #main -->
+
 @include('panel.footer')
 
 
