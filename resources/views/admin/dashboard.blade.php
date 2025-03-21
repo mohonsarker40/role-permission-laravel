@@ -36,9 +36,9 @@
 
 <body>
 
-@include('panel.header')
+@include('admin.header')
 
-@include('panel.sideNav')
+@include('admin.sideNav')
 
 @yield('content')
 
@@ -94,7 +94,7 @@
     </section>
 </main><!-- End #main -->
 
-@include('panel.footer')
+@include('admin.footer')
 
 
 <!-- Vendor JS Files -->

@@ -29480,7 +29480,7 @@
               return {};
             }, identity)
           }),
-          config('dialog-body-panel', [run$1(focusin(), (comp, se) => {
+          config('dialog-body-admin', [run$1(focusin(), (comp, se) => {
               comp.getSystem().broadcastOn([dialogFocusShiftedChannel], { newFocus: Optional.some(se.event.target) });
             })])
         ])

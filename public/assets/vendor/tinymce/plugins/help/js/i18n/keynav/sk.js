@@ -2,10 +2,10 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.sk',
 '<h1>Začíname s navigáciou pomocou klávesnice</h1>\n' +
   '\n' +
   '<dl>\n' +
-  '  <dt>Prejsť na panel s ponukami</dt>\n' +
+  '  <dt>Prejsť na admin s ponukami</dt>\n' +
   '  <dd>Windows alebo Linux: Alt+F9</dd>\n' +
   '  <dd>macOS: &#x2325;F9</dd>\n' +
-  '  <dt>Prejsť na panel nástrojov</dt>\n' +
+  '  <dt>Prejsť na admin nástrojov</dt>\n' +
   '  <dd>Windows alebo Linux: Alt+F10</dd>\n' +
   '  <dd>macOS: &#x2325;F10</dd>\n' +
   '  <dt>Prejsť na pätičku</dt>\n' +
@@ -14,7 +14,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.sk',
   '  <dt>Zaostriť na oznámenie</dt>\n' +
   '  <dd>Windows alebo Linux: Alt+F12</dd>\n' +
   '  <dd>macOS: &#x2325;F12</dd>\n' +
-  '  <dt>Prejsť na kontextový panel nástrojov</dt>\n' +
+  '  <dt>Prejsť na kontextový admin nástrojov</dt>\n' +
   '  <dd>Windows, Linux alebo macOS: Ctrl+F9</dd>\n' +
   '</dl>\n' +
   '\n' +
@@ -32,7 +32,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.sk',
   '<ol>\n' +
   '  <li>Panel s ponukou</li>\n' +
   '  <li>Každá skupina panela nástrojov</li>\n' +
-  '  <li>Bočný panel</li>\n' +
+  '  <li>Bočný admin</li>\n' +
   '  <li>Cesta k prvku v pätičke</li>\n' +
   '  <li>Prepínač počtu slov v pätičke</li>\n' +
   '  <li>Odkaz na informácie o značke v pätičke</li>\n' +
@@ -41,7 +41,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.sk',
   '\n' +
   '<p>Ak nejaká časť používateľského rozhrania nie je prítomná, preskočí sa.</p>\n' +
   '\n' +
-  '<p>Ak je pätička vybratá na navigáciu pomocou klávesnice a nie je viditeľný bočný panel, stlačením klávesov <strong>Shift+Tab</strong>\n' +
+  '<p>Ak je pätička vybratá na navigáciu pomocou klávesnice a nie je viditeľný bočný admin, stlačením klávesov <strong>Shift+Tab</strong>\n' +
   '  prejdete na prvú skupinu panela nástrojov, nie na poslednú.</p>\n' +
   '\n' +
   '<h1>Navigácia v rámci častí používateľského rozhrania</h1>\n' +

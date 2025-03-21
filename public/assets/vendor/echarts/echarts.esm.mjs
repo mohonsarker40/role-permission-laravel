@@ -58725,11 +58725,11 @@ function updateCoverAfterCreation(controller, cover) {
 function getCoverRenderer(cover) {
   return coverRenderers[cover.__brushOption.brushType];
 }
-// return target panel or `true` (means global panel)
+// return target admin or `true` (means global admin)
 function getPanelByPoint(controller, e, localCursorPoint) {
   var panels = controller._panels;
   if (!panels) {
-    return BRUSH_PANEL_GLOBAL; // Global panel
+    return BRUSH_PANEL_GLOBAL; // Global admin
   }
 
   var panel;
@@ -58739,16 +58739,16 @@ function getPanelByPoint(controller, e, localCursorPoint) {
   });
   return panel;
 }
-// Return a panel or true
+// Return a admin or true
 function getPanelByCover(controller, cover) {
   var panels = controller._panels;
   if (!panels) {
-    return BRUSH_PANEL_GLOBAL; // Global panel
+    return BRUSH_PANEL_GLOBAL; // Global admin
   }
 
   var panelId = cover.__brushOption.panelId;
   // User may give cover without coord sys info,
-  // which is then treated as global panel.
+  // which is then treated as global admin.
   return panelId != null ? panels[panelId] : BRUSH_PANEL_GLOBAL;
 }
 function clearCovers(controller) {
@@ -59175,7 +59175,7 @@ function getLineRenderer(xyIndex) {
     },
     updateCoverShape: function (controller, cover, localRange, brushOption) {
       var otherExtent;
-      // If brushWidth not specified, fit the panel.
+      // If brushWidth not specified, fit the admin.
       var panel = getPanelByCover(controller, cover);
       if (panel !== BRUSH_PANEL_GLOBAL && panel.getLinearBrushOtherExtent) {
         otherExtent = panel.getLinearBrushOtherExtent(xyIndex);
@@ -80337,7 +80337,7 @@ var SliderZoomView = /** @class */function (_super) {
       },
       z2: -40
     }));
-    // Click panel, over shadow, below handles.
+    // Click admin, over shadow, below handles.
     var clickPanel = new Rect$2({
       shape: {
         x: 0,

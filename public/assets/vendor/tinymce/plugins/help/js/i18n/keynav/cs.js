@@ -5,7 +5,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.cs',
   '  <dt>Přejít na řádek nabídek</dt>\n' +
   '  <dd>Windows nebo Linux: Alt+F9</dd>\n' +
   '  <dd>macOS: &#x2325;F9</dd>\n' +
-  '  <dt>Přejít na panel nástrojů</dt>\n' +
+  '  <dt>Přejít na admin nástrojů</dt>\n' +
   '  <dd>Windows nebo Linux: Alt+F10</dd>\n' +
   '  <dd>macOS: &#x2325;F10</dd>\n' +
   '  <dt>Přejít na zápatí</dt>\n' +
@@ -14,7 +14,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.cs',
   '  <dt>Přejít na oznámení</dt>\n' +
   '  <dd>Windows nebo Linux: Alt+F12</dd>\n' +
   '  <dd>macOS: &#x2325;F12</dd>\n' +
-  '  <dt>Přejít na kontextový panel nástrojů</dt>\n' +
+  '  <dt>Přejít na kontextový admin nástrojů</dt>\n' +
   '  <dd>Windows, Linux nebo macOS: Ctrl+F9</dd>\n' +
   '</dl>\n' +
   '\n' +
@@ -32,7 +32,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.cs',
   '<ol>\n' +
   '  <li>Řádek nabídek</li>\n' +
   '  <li>Každá skupina panelu nástrojů</li>\n' +
-  '  <li>Boční panel</li>\n' +
+  '  <li>Boční admin</li>\n' +
   '  <li>Cesta k prvku v zápatí.</li>\n' +
   '  <li>Tlačítko přepínače počtu slov v zápatí</li>\n' +
   '  <li>Odkaz na informace o značce v zápatí</li>\n' +
@@ -41,7 +41,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.cs',
   '\n' +
   '<p>Pokud nějaký oddíl uživatelského rozhraní není přítomen, je přeskočen.</p>\n' +
   '\n' +
-  '<p>Pokud je zápatí vybrané pro navigaci pomocí klávesnice a není zobrazen žádný boční panel, stisknutím kláves <strong>Shift+Tab</strong>\n' +
+  '<p>Pokud je zápatí vybrané pro navigaci pomocí klávesnice a není zobrazen žádný boční admin, stisknutím kláves <strong>Shift+Tab</strong>\n' +
   '  přejdete na první skupinu panelu nástrojů, nikoli na poslední.</p>\n' +
   '\n' +
   '<h1>Navigace v rámci oddílů uživatelského rozhraní</h1>\n' +

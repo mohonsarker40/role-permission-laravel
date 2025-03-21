@@ -19,7 +19,7 @@ class AuthController extends Controller
         $remember = !empty($remember->remember) ? true : false;
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember))
         {
-            return redirect('panel/dashboard');
+            return redirect('admin/dashboard');
         }
         else
         {

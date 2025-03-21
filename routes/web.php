@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
 
 
-Route::get('/', [\App\Http\Controllers\AuthController::class, 'login']);
-Route::post('/', [\App\Http\Controllers\AuthController::class, 'auth_login']);
-Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout']);
+Route::get('/', [AuthController::class, 'login']);
+Route::post('/', [AuthController::class, 'auth_login']);
+Route::get('logout', [AuthController::class, 'logout']);
 
-Route::get('panel/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
 
 Route::group(['middleware' => 'admin'], function (){
-
+    Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
 });

@@ -4169,7 +4169,7 @@ class Tab extends BaseComponent {
     }
     this._setAttributeIfNotExists(child, 'role', 'tab');
 
-    // set attributes to the related panel too
+    // set attributes to the related admin too
     this._setInitialAttributesOnTargetPanel(child);
   }
   _setInitialAttributesOnTargetPanel(child) {
