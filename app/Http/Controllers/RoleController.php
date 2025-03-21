@@ -10,12 +10,13 @@ class RoleController extends Controller
 
     public function list()
     {
-        //
+        $data['getRoles'] = Role::getRoles();
+        return view('admin.role.list', $data);
     }
 
     public function add()
     {
-        //
+        return view('admin.role.add');
     }
 
     public function insert(Request $request)
@@ -24,9 +25,14 @@ class RoleController extends Controller
         $data->name = $request->name;
         $data->save();
 
-        return redirect()->with('success', "Insert Successfully");
+        return redirect('admin/role')->with('success', 'Insert Successfully');
     }
 
+    public function edit($id)
+    {
+        $data['getRoles'] = Role::getSingle($id);
+        return view('admin.role.edit', $data);
+    }
 
     public function index()
     {
@@ -47,12 +53,6 @@ class RoleController extends Controller
 
 
     public function show(Role $role)
-    {
-        //
-    }
-
-
-    public function edit(Role $role)
     {
         //
     }

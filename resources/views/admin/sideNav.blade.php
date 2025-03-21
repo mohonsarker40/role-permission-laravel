@@ -9,20 +9,20 @@
             </li>
 
 
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link " href="{{ 'admin/user' }}">--}}
+{{--                    <i class="bi bi-circle"></i>--}}
+{{--                    <span>User</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             <li class="nav-item">
-                <a class="nav-link " href="#">
-                    <i class="bi bi-circle"></i>
-                    <span>User</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link " href="{{ url('admin/role') }}">
                     <i class="bi bi-circle"></i>
                     <span>Role</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{{ url('logout') }}">
+                <a class="nav-link" href="{{ url('logout') }}">
                     <i class="bi bi-box-arrow-right text-danger"></i>
                     <span>Logout</span>
                 </a>
