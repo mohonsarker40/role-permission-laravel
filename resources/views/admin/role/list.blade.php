@@ -17,17 +17,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($getRoles as $Role)
+                @foreach(($getRoles) as $Role)
                     <tr>
-                    <th scope="row">{{ $Role->id }}</th>
-                    <td>{{ $Role->name }}</td>
-                    <td>{{ $Role->created_at }}</td>
-                    <td>
-                        <a href="{{ url('admin/role/edit'.$Role->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="{{ url('admin/role/delete'.$Role->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
-                    @endforeach
+                        <th scope="row">{{ $Role->id }}</th>
+                        <td>{{ $Role->name }}</td>
+                        <td>{{ $Role->created_at }}</td>
+                        <td>
+                            <a href="{{ url('admin/role/edit/'.$Role->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ url('admin/role/delete/'.$Role->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
                     </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

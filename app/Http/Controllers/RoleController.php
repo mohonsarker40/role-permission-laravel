@@ -34,6 +34,23 @@ class RoleController extends Controller
         return view('admin.role.edit', $data);
     }
 
+    public function update($id, Request $request)
+    {
+        $data= Role::getSingle($id);
+        $data->name = $request->name;
+        $data->save();
+
+        return redirect('admin/role')->with('success', 'Update Successfully');
+    }
+
+    public function delete($id)
+    {
+        $data= Role::getSingle($id);
+        $data->delete();
+
+        return redirect('admin/role')->with('success', 'Delete Successfully');
+    }
+
     public function index()
     {
         //
@@ -57,15 +74,4 @@ class RoleController extends Controller
         //
     }
 
-
-    public function update(Request $request, Role $role)
-    {
-        //
-    }
-
-
-    public function destroy(Role $role)
-    {
-        //
-    }
 }

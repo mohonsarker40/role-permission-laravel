@@ -19,5 +19,5 @@ Route::group(['middleware' => 'admin'], function (){
     Route::post('admin/role/insert', [RoleController::class, 'insert']);
     Route::get('admin/role/edit/{id}', [RoleController::class, 'edit']);
     Route::post('admin/role/update/{id}', [RoleController::class, 'update']);
-    Route::post('admin/role/delete/{id}', [RoleController::class, 'delete']);
+    Route::get('admin/role/delete/{id}', [RoleController::class, 'delete']);
 });

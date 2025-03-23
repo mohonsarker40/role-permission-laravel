@@ -5,7 +5,7 @@
         <div class="card-body">
             <h5 class="card-title">Edit Role</h5>
 {{--            {{ url('admin/role/edit/{$id}') }}--}}
-            <form action="" method="post">
+            <form action="{{ url('admin/role/update/'.$getRoles->id) }}" method="post">
                 {{ csrf_field() }}
                 <div class="row mb-3 align-items-center">
                     <label for="inputText" class="col-sm-2 col-form-label text-end">Name :</label>

@@ -26,7 +26,7 @@ class AuthController extends Controller
         }
         else
         {
-            return redirect()->back()-with('error', 'email/password incorrect');
+            return view('auth.login')->with('error', 'email/password incorrect');
         }
 
     }
