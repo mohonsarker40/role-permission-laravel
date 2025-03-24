@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use \App\Http\Controllers\RoleController;
+use \App\Http\Controllers\UsersController;
 
 
 Route::get('/', [AuthController::class, 'login']);
@@ -20,4 +21,6 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('admin/role/edit/{id}', [RoleController::class, 'edit']);
     Route::post('admin/role/update/{id}', [RoleController::class, 'update']);
     Route::get('admin/role/delete/{id}', [RoleController::class, 'delete']);
+
+    Route::get('admin/users', [UsersController::class, 'list']);
 });
