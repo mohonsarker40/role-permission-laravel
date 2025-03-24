@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,9 @@ class RoleController extends Controller
 
     public function add()
     {
-        return view('admin.role.add');
+        $getPermission = Permission::getRecord();
+        $data['getPermission'] = $getPermission;
+        return view('admin.role.add', $data);
     }
 
     public function insert(Request $request)
