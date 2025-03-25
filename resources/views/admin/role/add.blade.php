@@ -32,15 +32,15 @@
                     <label for="permission" class="col-sm-2 col-form-label "><strong>Permission</strong> :</label>
                     @foreach($getPermission as $value)
                         <div class="row">
-                            <div class="col-3 my-2">
+                            <div class="col-2 my-2">
                                 {{ $value['name'] }}
                             </div>
-                            <div class="col-md-9 my-2">
+                            <div class="col-md-10 my-2">
                                 <div class="row">
                                     @foreach($value['group'] as $group)
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <label>
-                                                <input type="checkbox">
+                                                <input type="checkbox" value="{{ $group['id'] }}" name="permission_id[]">
                                                 {{ $group['name'] }}
                                             </label>
                                         </div>

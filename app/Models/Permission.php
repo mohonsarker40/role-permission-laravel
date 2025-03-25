@@ -11,18 +11,9 @@ class Permission extends Model
     protected $table = 'permissions';
     use HasFactory;
 
-    protected $fillable = ['name'];
-    public function validate($input = [])
-    {
-        $validate = Validator::make($input, [
-            'name' => 'required',
-        ]);
-        return $validate;
-    }
-
     static public function getSingle($id)
     {
-        return Permission::find($id);
+        return Role::find($id);
     }
 
     static public function getRecord()

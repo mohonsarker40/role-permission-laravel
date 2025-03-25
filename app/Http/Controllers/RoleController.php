@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Permission;
 use App\Models\Role;
+use App\Models\Role_Permission;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -24,9 +25,12 @@ class RoleController extends Controller
 
     public function insert(Request $request)
     {
+//        dd($request->all());
         $data = New Role;
         $data->name = $request->name;
         $data->save();
+
+        Role_Permission::InsertUpdateRecord($request->permission_id, $data->id);
 
         return redirect('admin/role')->with('success', 'Insert Successfully');
     }
