@@ -13,6 +13,8 @@ class Role_Permission extends Model
 
     static public function InsertUpdateRecord($permission_ids, $role_id)
     {
+        Role_Permission::where('role_id', '=', $role_id)->delete();
+
         foreach ($permission_ids as $permission_id)
         {
             $data = new Role_Permission;
@@ -21,4 +23,10 @@ class Role_Permission extends Model
             $data->save();
         }
     }
+
+    public static function getRolePermission($role_id)
+    {
+        return Role_Permission::where('role_id', '=', $role_id)->get();
+    }
+
 }

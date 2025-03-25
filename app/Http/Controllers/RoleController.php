@@ -38,6 +38,8 @@ class RoleController extends Controller
     public function edit($id)
     {
         $data['getRoles'] = Role::getSingle($id);
+        $data['getPermission'] = Permission::getRecord();
+        $data['getRolePermission'] = Role_Permission::getRolePermission($id);
         return view('admin.role.edit', $data);
     }
 
@@ -46,6 +48,8 @@ class RoleController extends Controller
         $data= Role::getSingle($id);
         $data->name = $request->name;
         $data->save();
+
+        Role_Permission::InsertUpdateRecord($request->permission_id, $data->id);
 
         return redirect('admin/role')->with('success', 'Update Successfully');
     }
