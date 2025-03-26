@@ -12,23 +12,27 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
                         <th scope="col">Date</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-{{--                <tbody>--}}
-{{--                @foreach(($getRoles) as $Role)--}}
-{{--                    <tr>--}}
-{{--                        <th scope="row">{{ $Role->id }}</th>--}}
-{{--                        <td>{{ $Role->name }}</td>--}}
-{{--                        <td>{{ $Role->created_at }}</td>--}}
-{{--                        <td>--}}
-{{--                            <a href="{{ url('admin/users/edit/'.$Role->id) }}" class="btn btn-primary btn-sm">Edit</a>--}}
-{{--                            <a href="{{ url('admin/users/delete/'.$Role->id) }}" class="btn btn-danger btn-sm">Delete</a>--}}
-{{--                        </td>--}}
-{{--                    </tr>--}}
-{{--                @endforeach--}}
-{{--                </tbody>--}}
+                <tbody>
+                @foreach(($getRecord) as $Role)
+                    <tr>
+                        <th scope="row">{{ $Role->id }}</th>
+                        <td>{{ $Role->name }}</td>
+                        <td>{{ $Role->email }}</td>
+                        <td>{{ $Role->role_name }}</td>
+                        <td>{{ $Role->created_at }}</td>
+                        <td>
+                            <a href="{{ url('admin/users/edit/'.$Role->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ url('admin/users/delete/'.$Role->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
             </table>
         </div>
     </div>

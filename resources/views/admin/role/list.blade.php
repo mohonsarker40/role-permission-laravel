@@ -17,7 +17,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(($getRoles) as $Role)
+                @foreach(($getRecord) as $Role)
                     <tr>
                         <th scope="row">{{ $Role->id }}</th>
                         <td>{{ $Role->name }}</td>

@@ -23,4 +23,10 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('admin/role/delete/{id}', [RoleController::class, 'delete']);
 
     Route::get('admin/users', [UsersController::class, 'list']);
+    Route::get('admin/users/add', [UsersController::class, 'add']);
+    Route::post('admin/users/insert', [UsersController::class, 'insert']);
+    Route::get('admin/users/edit/{id}', [UsersController::class, 'edit']);
+    Route::post('admin/users/update/{id}', [UsersController::class, 'update']);
+    Route::get('admin/users/delete/{id}', [UsersController::class, 'delete']);
+
 });

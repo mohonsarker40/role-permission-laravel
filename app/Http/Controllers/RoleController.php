@@ -12,7 +12,7 @@ class RoleController extends Controller
 
     public function list()
     {
-        $data['getRoles'] = Role::getRoles();
+        $data['getRecord'] = Role::getRecord();
         return view('admin.role.list', $data);
     }
 
@@ -37,7 +37,7 @@ class RoleController extends Controller
 
     public function edit($id)
     {
-        $data['getRoles'] = Role::getSingle($id);
+        $data['getRecord'] = Role::getSingle($id);
         $data['getPermission'] = Permission::getRecord();
         $data['getRolePermission'] = Role_Permission::getRolePermission($id);
         return view('admin.role.edit', $data);

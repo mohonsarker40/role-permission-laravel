@@ -25,7 +25,7 @@ class Role extends Model
         return Role::find($id);
     }
 
-    static public function getRoles()
+    static public function getRecord()
     {
         return Role::get();
     }

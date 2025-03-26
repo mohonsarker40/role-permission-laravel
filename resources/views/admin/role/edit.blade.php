@@ -5,13 +5,13 @@
         <div class="card-body">
             <h5 class="card-title">Edit Role</h5>
 {{--            {{ url('admin/role/edit/{$id}') }}--}}
-            <form action="{{ url('admin/role/update/'.$getRoles->id) }}" method="post">
+            <form action="{{ url('admin/role/update/'.$getRecord->id) }}" method="post">
                 {{ csrf_field() }}
 
                 <div class="row mb-3 align-items-center">
                     <label for="name" class="col-sm-2 col-form-label">Name :</label>
                     <div class="col-md-6 mb-2">
-                        <input type="text" name="name" value="{{ $getRoles->name }}" required class="form-control"
+                        <input type="text" name="name" value="{{ $getRecord->name }}" required class="form-control"
                                id="name" placeholder="Enter role name">
                     </div>
                 </div>

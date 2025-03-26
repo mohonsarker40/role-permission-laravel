@@ -15,6 +15,10 @@ class Role_Permission extends Model
     {
         Role_Permission::where('role_id', '=', $role_id)->delete();
 
+        if (!is_array($permission_ids) || empty($permission_ids)) {
+            return;
+        }
+
         foreach ($permission_ids as $permission_id)
         {
             $data = new Role_Permission;
