@@ -27,6 +27,8 @@ class Role extends Model
 
     static public function getRecord()
     {
-        return Role::get();
+//        return Role::get();
+        return Role::select('id', 'name')->get();
+
     }
 }

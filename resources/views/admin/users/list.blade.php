@@ -19,16 +19,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach(($getRecord) as $Role)
+                @foreach(($getRecord) as $value)
                     <tr>
-                        <th scope="row">{{ $Role->id }}</th>
-                        <td>{{ $Role->name }}</td>
-                        <td>{{ $Role->email }}</td>
-                        <td>{{ $Role->role_name }}</td>
-                        <td>{{ $Role->created_at }}</td>
+                        <th scope="row">{{ $value->id }}</th>
+                        <td>{{ $value->name }}</td>
+                        <td>{{ $value->email }}</td>
+                        <td>{{ $value->role_name }}</td>
+                        <td>{{ $value->created_at }}</td>
                         <td>
-                            <a href="{{ url('admin/users/edit/'.$Role->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <a href="{{ url('admin/users/delete/'.$Role->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="{{ url('admin/users/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ url('admin/users/delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                 @endforeach

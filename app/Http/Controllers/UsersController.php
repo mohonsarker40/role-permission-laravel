@@ -41,26 +41,28 @@ class UsersController extends Controller
 
     }
 
+
+    public function edit($id)
+    {
+        $data['getRecord'] = User::getSingle($id);
+        $data['getRole'] = Role::getRecord();
+        return view('admin.users.add', $data);
+    }
+
+    public function update($id)
+    {
+        //
+    }
+
+
+    public function delete($id)
+    {
+        //
+    }
+
     public function show($users)
     {
         //
     }
 
-
-    public function edit($users)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $users)
-    {
-        //
-    }
-
-
-    public function destroy($users)
-    {
-        //
-    }
 }

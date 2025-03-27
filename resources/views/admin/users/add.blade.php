@@ -41,8 +41,8 @@
                         <select class="form-select" name="role_id" required>
                             <option value="">select</option>
                             @foreach($getRecord as $Role)
-                                <option {{ (old('role_id') == $Role->id) ? 'selected' : '' }}
-                                        value="{{ $Role->id }}">{{ $Role->name }}</option>
+                                <option {{ (old('role_id') == $Role->id) ? 'selected' : '' }} value="{{ $Role->id }}">
+                                    {{ $Role->name }}</option>
                                 @endforeach
                         </select>
                     </div>
