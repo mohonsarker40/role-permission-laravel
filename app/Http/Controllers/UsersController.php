@@ -57,7 +57,10 @@ class UsersController extends Controller
 
     public function delete($id)
     {
-        //
+        $data = User::getSingle($id);
+        $data->delete();
+
+        return redirect('admin/users')->with('success', "Delete Successfully");
     }
 
     public function show($users)
