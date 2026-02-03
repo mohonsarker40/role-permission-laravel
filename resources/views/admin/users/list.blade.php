@@ -19,16 +19,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach(($getRecord) as $value)
+                @foreach(($getUserData) as $value)
                     <tr>
-                        <th scope="row">{{ $value->id }}</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->role_name }}</td>
-                        <td>{{ $value->created_at }}</td>
+                        <td>{{ $value->created_at->format('d/m/Y') }}</td>
                         <td>
                             <a href="{{ url('admin/users/edit/'.$value->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <a href="{{ url('admin/users/delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="{{ url('admin/users/delete/'.$value->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                         </td>
                     </tr>
                 @endforeach

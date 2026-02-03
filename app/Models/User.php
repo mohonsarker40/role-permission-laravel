@@ -31,13 +31,13 @@ class User extends Authenticatable
 //        'password' => 'hashed',
     ];
 
-    static public function getSingle($id)
+    static public function getUserId($id)
     {
         return User::find($id);
     }
 
 
-    static public function getRecord()
+    static public function getUserData()
     {
         return User::select('users.*', 'roles.name as role_name')
             ->leftJoin('roles', 'roles.id', '=', 'users.role_id')

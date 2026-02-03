@@ -25,10 +25,9 @@ class Role extends Model
         return Role::find($id);
     }
 
-    static public function getRecord()
+    static public function getRoleData()
     {
-//        return Role::get();
-        return Role::select('id', 'name')->get();
-
+       return Role::select('*')->orderBy('id', 'desc')->get();
+        // return Role::select('id', 'name', 'created_at')->get();
     }
 }

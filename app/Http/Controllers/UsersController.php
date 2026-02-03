@@ -12,14 +12,14 @@ class UsersController extends Controller
 
     public function list()
     {
-        $data['getRecord'] = User::getRecord();
+        $data['getUserData'] = User::getUserData();
         return view('admin.users.list', $data);
     }
 
 
     public function add()
     {
-        $data['getRecord'] = Role::getRecord();
+        $data['getRoleData'] = Role::getRoleData();
         return view('admin.users.add', $data);
     }
 
@@ -44,20 +44,33 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-        $data['getRecord'] = User::getSingle($id);
-        $data['getRole'] = Role::getRecord();
-        return view('admin.users.add', $data);
+        $data['getUserData'] = User::getUserId($id);
+        $data['getRoleData'] = Role::getRoleData();
+        //  dd($data['getUserData']);
+        return view('admin.users.edit', $data);
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        //
+        $data = User::getUserId($id);
+
+        $data->name = trim($request->name);
+        $data->email = trim($request->email);
+
+        if (!empty($request->password)) {
+            $data->password = Hash::make($request->password);
+        }
+
+        $data->role_id = trim($request->role_id);
+        $data->save();
+
+        return redirect('admin/users')->with('success', 'Update Successfully');
     }
 
 
     public function delete($id)
     {
-        $data = User::getSingle($id);
+        $data = User::getUserId($id);
         $data->delete();
 
         return redirect('admin/users')->with('success', "Delete Successfully");

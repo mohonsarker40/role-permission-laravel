@@ -17,14 +17,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(($getRecord) as $Role)
+                @foreach(($getRoleData) as $Role)
                     <tr>
-                        <th scope="row">{{ $Role->id }}</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $Role->name }}</td>
-                        <td>{{ $Role->created_at }}</td>
+                        <td>{{ $Role->created_at->format('d-m-Y') }}</td>
                         <td>
                             <a href="{{ url('admin/role/edit/'.$Role->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <a href="{{ url('admin/role/delete/'.$Role->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="{{ url('admin/role/delete/'.$Role->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this role?')">Delete</a>
                         </td>
                     </tr>
                 @endforeach

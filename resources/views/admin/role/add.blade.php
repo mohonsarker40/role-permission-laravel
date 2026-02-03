@@ -5,7 +5,7 @@
         <div class="card-body">
             <div class="d-flex align-center justify-content-between">
                 <h5 class="card-title">Add Role</h5>
-                <a href="{{ url('admin/role') }}" class="btn btn-danger mt-2">Back</a>
+                <div class="mt-2"><a href="{{ url('admin/role') }}" class="btn btn-danger mt-2">Back</a></div>
             </div>
             <form action="{{ url('admin/role/insert') }}" method="POST">
                 {{ csrf_field() }}
