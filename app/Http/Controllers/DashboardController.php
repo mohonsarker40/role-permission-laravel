@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $data['users'] = User::count();
+        // dd($data['users']);
+        return view('admin.dashboard', $data);
     }
 
     public function index()

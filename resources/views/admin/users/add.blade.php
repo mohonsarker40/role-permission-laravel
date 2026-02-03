@@ -1,11 +1,11 @@
-@extends('admin.dashboard')
+@extends('admin.home')
 
 @section('content')
     <div class="card">
         <div class="card-body">
             <div class="d-flex align-center justify-content-between">
                 <h5 class="card-title">Add User</h5>
-                <a href="{{ url('admin/users') }}" class="btn btn-danger mt-2">Back</a>
+                <div class="mt-2"><a href="{{ url('admin/users') }}" class="btn btn-danger">Back</a></div>
             </div>
             <form action="{{ url('admin/users/insert') }}" method="POST">
                 {{ csrf_field() }}

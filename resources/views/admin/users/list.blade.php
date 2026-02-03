@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.home')
 
 @section('content')
     <div class="card">
