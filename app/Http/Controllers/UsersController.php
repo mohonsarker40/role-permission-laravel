@@ -10,16 +10,29 @@ use Illuminate\Support\Facades\Hash;
 class UsersController extends Controller
 {
 
+    protected $model;
+
+    public function __construct()
+    {
+        $this->model = new User();
+    }
+
+
     public function list()
     {
-        $data['getUserData'] = User::getUserData();
+        $data['users'] = $this->model
+            ->select('users.*', 'roles.name as role_name')
+            ->leftJoin('roles', 'roles.id', '=', 'users.role_id')
+            ->orderBy('users.id', 'desc')
+            ->get();
+
         return view('admin.users.list', $data);
     }
 
 
     public function add()
     {
-        $data['getRoleData'] = Role::getRoleData();
+        $data['roles'] = Role::orderBy('id', 'desc')->get();
         return view('admin.users.add', $data);
     }
 
@@ -44,33 +57,28 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-        $data['getUserData'] = User::getUserId($id);
-        $data['getRoleData'] = Role::getRoleData();
-        //  dd($data['getUserData']);
+        $data['users'] = User::find($id);
+        $data['roles'] = Role::orderBy('id', 'desc')->get();
         return view('admin.users.edit', $data);
     }
 
     public function update(Request $request, $id)
     {
-        $data = User::getUserId($id);
+        $data = User::findOrFail($id);
 
-        $data->name = trim($request->name);
-        $data->email = trim($request->email);
-
-        if (!empty($request->password)) {
-            $data->password = Hash::make($request->password);
-        }
-
-        $data->role_id = trim($request->role_id);
-        $data->save();
-
+        $data->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role_id' => $request->role_id,
+            'password' => $request->password ? Hash::make($request->password) : $data->password,
+        ]);
         return redirect('admin/users')->with('success', 'Update Successfully');
     }
 
 
     public function delete($id)
     {
-        $data = User::getUserId($id);
+        $data = User::findOrFail($id);
         $data->delete();
 
         return redirect('admin/users')->with('success', "Delete Successfully");

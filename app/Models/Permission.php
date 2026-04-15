@@ -13,7 +13,7 @@ class Permission extends Model
 
     static public function getSingle($id)
     {
-        return Role::find($id);
+        return Permission::find($id);
     }
 
     static public function getRecord()

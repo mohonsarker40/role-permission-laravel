@@ -34,9 +34,9 @@
                     <div class="col-md-6 mb-2">
                         <select class="form-select" name="role_id" required>
                             <option value="">select</option>
-                            @foreach($getRoleData as $Role)
-                                <option {{ (old('role_id') == $Role->id) ? 'selected' : '' }} value="{{ $Role->id }}">
-                                    {{ $Role->name }}
+                            @foreach($roles as $data)
+                                <option {{ (old('role_id') == $data->id) ? 'selected' : '' }} value="{{ $data->id }}">
+                                    {{ $data->name }}
                                 </option>
                                 @endforeach
                         </select>

@@ -16,6 +16,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role_id',
         'password',
     ];
 
@@ -31,18 +32,22 @@ class User extends Authenticatable
 //        'password' => 'hashed',
     ];
 
-    static public function getUserId($id)
-    {
-        return User::find($id);
+    public function roles(){
+        return $this->belongsTo(Role::class, 'role_id', 'id');
     }
 
-
-    static public function getUserData()
-    {
-        return User::select('users.*', 'roles.name as role_name')
-            ->leftJoin('roles', 'roles.id', '=', 'users.role_id')
-            ->orderBy('users.id', 'desc')
-            ->get();
-
-    }
+//    static public function getUserId($id)
+//    {
+//        return User::find($id);
+//    }
+//
+//
+//    static public function getUserData()
+//    {
+//        return User::select('users.*', 'roles.name as role_name')
+//            ->leftJoin('roles', 'roles.id', '=', 'users.role_id')
+//            ->orderBy('users.id', 'desc')
+//            ->get();
+//
+//    }
 }

@@ -12,8 +12,8 @@ class RoleController extends Controller
 
     public function list()
     {
-        $data['getRoleData'] = Role::getRoleData();
-        // dd($data);
+        $data['roles'] = Role::orderBy('id', 'desc')->get();
+
         return view('admin.role.list', $data);
     }
 
@@ -26,7 +26,6 @@ class RoleController extends Controller
 
     public function insert(Request $request)
     {
-//        dd($request->all());
         $data = New Role;
         $data->name = $request->name;
         $data->save();
@@ -57,7 +56,7 @@ class RoleController extends Controller
 
     public function delete($id)
     {
-        $data= Role::getSingle($id);
+        $data = Role::findOrFail($id);
         $data->delete();
 
         return redirect('admin/role')->with('success', 'Delete Successfully');
